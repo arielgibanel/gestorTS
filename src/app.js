@@ -1,69 +1,272 @@
 "use strict";
-// 2. Estat de l'aplicació (Array global)
-let llistaElements = [];
-// 3. Funció per llegir el formulari i afegir un nou element a l'array
+let exemple;
+//creem una llista d'elements
+let llistaEquips = [
+    {
+        "nom": "Castellón",
+        "partitsJugats": 11,
+        "punts": 26,
+        "golsFavor": 22,
+        "golsContra": 4
+    },
+    {
+        "nom": "Almería",
+        "partitsJugats": 11,
+        "punts": 25,
+        "golsFavor": 22,
+        "golsContra": 9
+    },
+    {
+        "nom": "Eibar",
+        "partitsJugats": 11,
+        "punts": 22,
+        "golsFavor": 20,
+        "golsContra": 13
+    },
+    {
+        "nom": "Girona",
+        "partitsJugats": 11,
+        "punts": 21,
+        "golsFavor": 22,
+        "golsContra": 10
+    },
+    {
+        "nom": "Granada",
+        "partitsJugats": 11,
+        "punts": 20,
+        "golsFavor": 18,
+        "golsContra": 14
+    },
+    {
+        "nom": "Burgos",
+        "partitsJugats": 11,
+        "punts": 20,
+        "golsFavor": 16,
+        "golsContra": 12
+    },
+    {
+        "nom": "RCD Mallorca",
+        "partitsJugats": 11,
+        "punts": 19,
+        "golsFavor": 13,
+        "golsContra": 6
+    },
+    {
+        "nom": "Sporting Gijón",
+        "partitsJugats": 11,
+        "punts": 19,
+        "golsFavor": 11,
+        "golsContra": 13
+    },
+    {
+        "nom": "Real Oviedo",
+        "partitsJugats": 11,
+        "punts": 18,
+        "golsFavor": 15,
+        "golsContra": 12
+    },
+    {
+        "nom": "CE Sabadell",
+        "partitsJugats": 11,
+        "punts": 17,
+        "golsFavor": 11,
+        "golsContra": 9
+    },
+    {
+        "nom": "Córdoba",
+        "partitsJugats": 11,
+        "punts": 15,
+        "golsFavor": 17,
+        "golsContra": 20
+    },
+    {
+        "nom": "Tenerife",
+        "partitsJugats": 11,
+        "punts": 14,
+        "golsFavor": 13,
+        "golsContra": 15
+    },
+    {
+        "nom": "CD Eldense",
+        "partitsJugats": 11,
+        "punts": 14,
+        "golsFavor": 13,
+        "golsContra": 15
+    },
+    {
+        "nom": "UD Las Palmas",
+        "partitsJugats": 11,
+        "punts": 14,
+        "golsFavor": 14,
+        "golsContra": 19
+    },
+    {
+        "nom": "Valladolid",
+        "partitsJugats": 11,
+        "punts": 12,
+        "golsFavor": 16,
+        "golsContra": 16
+    },
+    {
+        "nom": "Celta B",
+        "partitsJugats": 11,
+        "punts": 12,
+        "golsFavor": 16,
+        "golsContra": 21
+    },
+    {
+        "nom": "Leganés",
+        "partitsJugats": 11,
+        "punts": 12,
+        "golsFavor": 7,
+        "golsContra": 16
+    },
+    {
+        "nom": "Cádiz",
+        "partitsJugats": 11,
+        "punts": 10,
+        "golsFavor": 14,
+        "golsContra": 14
+    },
+    {
+        "nom": "Andorra",
+        "partitsJugats": 11,
+        "punts": 10,
+        "golsFavor": 15,
+        "golsContra": 20
+    },
+    {
+        "nom": "Real Sociedad B",
+        "partitsJugats": 11,
+        "punts": 8,
+        "golsFavor": 14,
+        "golsContra": 22
+    },
+    {
+        "nom": "AD Ceuta",
+        "partitsJugats": 11,
+        "punts": 5,
+        "golsFavor": 10,
+        "golsContra": 25
+    },
+    {
+        "nom": "Albacete",
+        "partitsJugats": 11,
+        "punts": 4,
+        "golsFavor": 8,
+        "golsContra": 22
+    }
+];
+// 2. Funció per llegir el formulari i afegir un nou element a l'array
 function afegirElement() {
     const inputNom = document.getElementById('iNom');
-    const selectCategoria = document.getElementById('sCategoria');
-    const inputValor = document.getElementById('iValor');
-    const checkEstat = document.getElementById('cEstat');
-    // Validació bàsica
-    if (inputNom.value.trim() === '') {
-        alert('Escriu un nom abans d\'afegir!');
-        return;
-    }
-    // Crear l'objecte
-    const nouElement = {
+    const inputPartitsjugats = document.getElementById('iPartitsjugats');
+    const inputPunts = document.getElementById('iPunts');
+    const inputGolsfavor = document.getElementById('iGolsfavor');
+    const inputGolscontra = document.getElementById('iGolscontra');
+    exemple = {
         nom: inputNom.value,
-        categoria: selectCategoria.value,
-        valor: Number(inputValor.value),
-        estat: checkEstat.checked
+        partitsJugats: parseFloat(inputPartitsjugats.value) || 0,
+        punts: parseFloat(inputPunts.value) || 0,
+        golsFavor: parseFloat(inputGolsfavor.value) || 0,
+        golsContra: parseFloat(inputGolscontra.value) || 0,
     };
-    // Afegir-lo a l'array
-    llistaElements.push(nouElement);
-    // Netejar el formulari
-    inputNom.value = '';
-    inputValor.value = '0';
-    checkEstat.checked = false;
+    llistaEquips.push(exemple);
+    console.log(exemple);
+    console.table(llistaEquips);
+    llistaEquips.sort((a, b) => b.punts - a.punts);
     // Actualitzar la pantalla
-    actualitzarUI();
-}
-// 4. Funció per esborrar un element per la seva posició de l'array
-function esborrarElement(index) {
-    llistaElements.splice(index, 1);
     actualitzarUI();
 }
 // 5. Funció per dibuixar l'array al DOM
 function actualitzarUI() {
-    const contenidor = document.getElementById('llistaContenidor');
-    const totalSpan = document.getElementById('totalElements');
-    // Netejem el contingut anterior
-    contenidor.innerHTML = '';
-    // Actualitzem el comptador total
-    totalSpan.innerText = llistaElements.length.toString();
-    // Recorrem l'array i creem els elements HTML
-    llistaElements.forEach((element, index) => {
-        const itemDiv = document.createElement('div');
-        itemDiv.className = 'item-card';
-        itemDiv.innerHTML = `
-      <div class="item-info">
-        <strong>${element.nom}</strong> [${element.categoria}]
-        <p>Valor: ${element.valor} | ${element.estat ? '✅ Actiu' : '❌ Inactiu'}</p>
-      </div>
-    `;
-        // Botó per eliminar l'element
-        const btnEliminar = document.createElement('button');
-        btnEliminar.className = 'btn-esborrar';
-        btnEliminar.innerText = 'Eliminar';
-        btnEliminar.onclick = () => esborrarElement(index);
-        itemDiv.appendChild(btnEliminar);
-        contenidor.appendChild(itemDiv);
-    });
+    // const nom = document.getElementById('nom') as HTMLInputElement;
+    // const partitsjugats = document.getElementById('partitsJugats') as HTMLElement;
+    // const punts = document.getElementById('punts') as HTMLElement;
+    // const golsFavor = document.getElementById('golsFavor') as HTMLElement;
+    // const golsContra = document.getElementById('golsContra') as HTMLElement;
+    //
+    // nom.innerText = exemple.nom
+    // partitsjugats.innerText=String(exemple.partitsJugats)
+    // punts.innerText=String(exemple.punts)
+    // golsFavor.innerText=String(exemple.golsFavor)
+    // golsContra.innerText=String(exemple.golsContra)
+    const contenidor = document.getElementById('contenidorEquips');
+    let html;
+    html = '<h1>Llista Equips</h1>';
+    html += '<div class=\'cardEquip title\'>';
+    html += '<h3>EQUIP</h3>';
+    html += '<h3>PJ</h3>';
+    html += '<h3>Punts</h3>';
+    html += '<h3>GF</h3>';
+    html += '<h3>GC</h3>';
+    html += '<\/div>';
+    for (let i = 0; i < llistaEquips.length; i++) {
+        if (i == 0) {
+            html += '<div class=\'cardEquip lider \'>';
+        }
+        else if (i == 1) {
+            html += '<div class=\'cardEquip ascensDirecte \'>';
+        }
+        else if (i <= 5) {
+            html += '<div class=\'cardEquip playoff\'>';
+        }
+        else if (i >= 18) {
+            html += '<div class=\'cardEquip descens\'>';
+        }
+        else
+            html += '<div class=\'cardEquip\'>';
+        html += '<h3>' + llistaEquips[i].nom + '</h3>';
+        html += '<h3>' + llistaEquips[i].partitsJugats + '</h3>';
+        html += '<h3>' + llistaEquips[i].punts + '</h3>';
+        html += '<h3>' + llistaEquips[i].golsFavor + '</h3>';
+        html += '<h3>' + llistaEquips[i].golsContra + '</h3>';
+        html += `<button onclick="partitGuanyat(${i})">V</button>`;
+        html += `<button onclick="partitEmpatat(${i})">E</button>`;
+        html += `<button onclick="partitPerdut(${i})">D</button>`;
+        html += `<button onclick="golFavor(${i})">GF</button>`;
+        html += `<button onclick="golContra(${i})">GC</button>`;
+        html += '<\/div>';
+    }
+    contenidor.innerHTML = html;
+}
+function partitGuanyat(idEquip) {
+    llistaEquips[idEquip].punts = llistaEquips[idEquip].punts + 3;
+    llistaEquips[idEquip].partitsJugats = llistaEquips[idEquip].partitsJugats += 1;
+    console.log(idEquip);
+    llistaEquips.sort((a, b) => b.punts - a.punts);
+    actualitzarUI();
+}
+function partitEmpatat(idEquip) {
+    llistaEquips[idEquip].punts = llistaEquips[idEquip].punts + 1;
+    llistaEquips[idEquip].partitsJugats = llistaEquips[idEquip].partitsJugats += 1;
+    console.log(idEquip);
+    llistaEquips.sort((a, b) => b.punts - a.punts);
+    actualitzarUI();
+}
+function partitPerdut(idEquip) {
+    llistaEquips[idEquip].punts = llistaEquips[idEquip].punts;
+    llistaEquips[idEquip].partitsJugats = llistaEquips[idEquip].partitsJugats += 1;
+    console.log(idEquip);
+    llistaEquips.sort((a, b) => b.punts - a.punts);
+    actualitzarUI();
+}
+function golFavor(idEquip) {
+    llistaEquips[idEquip].golsFavor = llistaEquips[idEquip].golsFavor + 1;
+    console.log(idEquip);
+    llistaEquips.sort((a, b) => b.punts - a.punts);
+    actualitzarUI();
+}
+function golContra(idEquip) {
+    llistaEquips[idEquip].golsContra = llistaEquips[idEquip].golsContra + 1;
+    console.log(idEquip);
+    llistaEquips.sort((a, b) => b.punts - a.punts);
+    actualitzarUI();
 }
 // 6. Assegurar que el DOM està carregat abans d'assignar esdeveniments
 document.addEventListener('DOMContentLoaded', () => {
     const btnAfegir = document.getElementById('btnAfegir');
     btnAfegir === null || btnAfegir === void 0 ? void 0 : btnAfegir.addEventListener('click', afegirElement);
-    // Renderitzat inicial
     actualitzarUI();
 });
+actualitzarUI();

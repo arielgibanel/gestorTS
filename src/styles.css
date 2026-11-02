@@ -6,8 +6,8 @@
 
 body {
     font-family: system-ui, -apple-system, sans-serif;
-    background-color: #f1f5f9;
-    color: #334155;
+    background-color: #3C6E71;
+    color: #000000;
     padding: 20px;
 }
 
@@ -19,24 +19,76 @@ body {
     gap: 20px;
 }
 
-h1 {
-    text-align: center;
-    color: #0f172a;
+.panell{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 50px;
+    margin: 100px;
+    align-items: flex-start;
 }
 
+h1 {
+    text-align: center;
+    color: #ffffff;
+}
+
+
+
 .card {
-    background: white;
+    background: #ffffff;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px -1px rgb(255 255 255 / 0.1);
+
 }
+
+.cardEquip {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    align-items: center;
+    align-content: center;
+    background: #d17123;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px -1px rgb(255 255 255 / 0.1);
+}
+
+.lider{
+    background: #386641;
+}
+
+.ascensDirecte{
+    background: #a7c957;
+}
+
+.playoff{
+    background: #edd359;
+}
+
+.descens{
+    background: #c80e0e;
+}
+
+
+.title{
+    background: #14bac8;
+
+}
+
+
 
 .card h2 {
     font-size: 1.1rem;
     margin-bottom: 15px;
-    border-bottom: 2px solid #e2e8f0;
+    border-bottom: 2px solid #284b63;
     padding-bottom: 8px;
 }
+
+h3 {
+    text-align: center;
+    color: #000000;
+}
+
 
 .field {
     display: flex;
@@ -58,7 +110,7 @@ input[type="text"],
 input[type="number"],
 select {
     padding: 8px 12px;
-    border: 1px solid #cbd5e1;
+    border: 1px solid #284b63;
     border-radius: 6px;
     font-size: 0.95rem;
 }
@@ -66,8 +118,8 @@ select {
 button {
     width: 100%;
     padding: 10px;
-    background-color: #2563eb;
-    color: white;
+    background-color: #d9d9d9;
+    color: #000000;
     border: none;
     border-radius: 6px;
     font-weight: bold;
@@ -96,7 +148,7 @@ button:hover {
 
 .item-info p {
     font-size: 0.85rem;
-    color: #64748b;
+    color: #ffffff;
     margin-top: 2px;
 }
 
